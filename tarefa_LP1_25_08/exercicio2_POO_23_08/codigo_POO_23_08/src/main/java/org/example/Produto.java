@@ -21,16 +21,16 @@ public class Produto {
     public double getPreco() { return preco; }
     public void setPreco(double preco) { this.preco = preco; }
 
-    public void aplicarDesconto(double porcentagem) {
+    public void aplicaDesconto(double porcentagem) {
         this.preco -= (this.preco * (porcentagem / 100));
         System.out.println("Novo preço com desconto: R$ " + this.preco);
     }
 
-    public void exibirEtiqueta() {
+    public void exibeEtiqueta() {
         System.out.println("Produto: " + descricao + " | Tam: " + tamanho + " | Preço: R$ " + preco);
     }
 
-    public boolean verificarTamanho(String tamanhoDesejado) {
+    public boolean verificaTamanho(String tamanhoDesejado) {
         boolean disponivel = this.tamanho.equalsIgnoreCase(tamanhoDesejado);
         if (disponivel) {
             System.out.println("O tamanho " + tamanhoDesejado + " está disponível para: " + descricao);
