@@ -8,8 +8,8 @@ import java.io.IOException;
 public class InicioController {
 
     @FXML
-    void aluguel(ActionEvent event) {
-
+    void aluguel(ActionEvent event) throws IOException {
+        App.setRoot("Aluguel");
     }
 
     @FXML
@@ -23,13 +23,13 @@ public class InicioController {
     }
 
     @FXML
-    void multiplo(ActionEvent event) {
-
+    void multiplo(ActionEvent event) throws IOException {
+        App.setRoot("Multiplo");
     }
 
     @FXML
-    void senha(ActionEvent event) {
-
+    void senha(ActionEvent event) throws IOException {
+        App.setRoot("Senha");
     }
 
     @FXML
@@ -38,8 +38,8 @@ public class InicioController {
     }
 
     @FXML
-    void viagem(ActionEvent event) {
-
+    void viagem(ActionEvent event) throws IOException {
+        App.setRoot("Viagem");
     }
 
 }
