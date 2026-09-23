@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+
 public class DescontoController {
 
     @FXML
@@ -12,6 +14,11 @@ public class DescontoController {
 
     @FXML
     private TextField txt_desconto;
+
+    @FXML
+    void Voltar(ActionEvent event) throws IOException {
+        App.setRoot("Inicio");
+    }
 
     @FXML
     void calculando(ActionEvent event) {

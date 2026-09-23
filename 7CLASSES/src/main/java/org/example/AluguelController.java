@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+
 public class AluguelController {
 
     @FXML
@@ -16,6 +18,10 @@ public class AluguelController {
     @FXML
     private TextField txt_dist;
 
+    @FXML
+    void Voltar(ActionEvent event) throws IOException {
+        App.setRoot("Inicio");
+    }
     @FXML
     void btn_aluguel(ActionEvent event) {
         Aluguel a = new Aluguel();

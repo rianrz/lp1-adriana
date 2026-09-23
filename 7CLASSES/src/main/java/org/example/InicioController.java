@@ -13,13 +13,13 @@ public class InicioController {
     }
 
     @FXML
-    void camelo(ActionEvent event) {
-
+    void camelo(ActionEvent event) throws  IOException{
+        App.setRoot("Camelos");
     }
 
     @FXML
-    void ddesconto(ActionEvent event) {
-
+    void ddesconto(ActionEvent event) throws IOException {
+        App.setRoot("Desconto");
     }
 
     @FXML

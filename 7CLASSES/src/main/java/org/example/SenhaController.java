@@ -6,6 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+
 public class SenhaController {
 
     @FXML
@@ -16,6 +18,11 @@ public class SenhaController {
 
     @FXML
     private TextField txt_senha;
+
+    @FXML
+    void Voltar(ActionEvent event) throws IOException {
+        App.setRoot("Inicio");
+    }
 
     @FXML
     void testar(ActionEvent event) {

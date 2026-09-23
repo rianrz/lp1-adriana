@@ -5,11 +5,11 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.TemperaturaController">
    <children>
       <TextField fx:id="txt_temperatura" layoutX="111.0" layoutY="174.0" />
       <Label fx:id="lbl_resultado1" layoutX="300.0" layoutY="286.0" text="...." />
-      <Button layoutX="397.0" layoutY="174.0" mnemonicParsing="false" onAction="#executa" text="Button" />
+      <Button layoutX="397.0" layoutY="174.0" mnemonicParsing="false" onAction="#executa" text="Calcular" />
+      <Button layoutX="92.0" layoutY="335.0" mnemonicParsing="false" onAction="#Voltar" text="Voltar" />
    </children>
 </AnchorPane>

@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+
 public class ViagemController {
 
     @FXML
@@ -16,6 +18,10 @@ public class ViagemController {
     @FXML
     private TextField txt_preco;
 
+    @FXML
+    void Voltar(ActionEvent event) throws IOException {
+        App.setRoot("Inicio");
+    }
     @FXML
     void calcular(ActionEvent event) {
     Viagem v = new Viagem(Double.parseDouble(txt_distancia.getText()), Double.parseDouble(txt_preco.getText()));

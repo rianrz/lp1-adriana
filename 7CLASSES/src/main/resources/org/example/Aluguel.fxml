@@ -5,7 +5,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.AluguelController">
    <children>
       <TextField fx:id="txt_dia" layoutX="77.0" layoutY="79.0" />
@@ -14,5 +13,6 @@
       <Label layoutX="77.0" layoutY="178.0" text="Informe o distancia" />
       <Button layoutX="427.0" layoutY="128.0" mnemonicParsing="false" onAction="#btn_aluguel" text="Calcular" />
       <Label fx:id="lbl_resultado" layoutX="340.0" layoutY="265.0" text="...." />
+      <Button layoutX="82.0" layoutY="325.0" mnemonicParsing="false" onAction="#Voltar" text="Voltar" />
    </children>
 </AnchorPane>

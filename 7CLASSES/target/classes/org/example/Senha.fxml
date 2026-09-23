@@ -20,5 +20,6 @@
       </TextField>
       <Label layoutX="228.0" layoutY="111.0" text="Insira a Senha" />
       <Label fx:id="acesso" layoutX="255.0" layoutY="325.0" text="...." />
+      <Button layoutX="92.0" layoutY="335.0" mnemonicParsing="false" onAction="#Voltar" text="Voltar" />
    </children>
 </AnchorPane>

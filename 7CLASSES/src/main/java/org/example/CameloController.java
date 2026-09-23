@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+
 public class CameloController {
 
     @FXML
@@ -12,6 +14,11 @@ public class CameloController {
 
     @FXML
     private TextField txt_camelos;
+
+    @FXML
+    void Voltar(ActionEvent event) throws IOException {
+        App.setRoot("Inicio");
+    }
 
     @FXML
     void btn_calcular(ActionEvent event) {

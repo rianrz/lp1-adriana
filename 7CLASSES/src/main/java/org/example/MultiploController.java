@@ -6,6 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+
 public class MultiploController {
 
     @FXML
@@ -23,6 +25,11 @@ public class MultiploController {
     @FXML
     void mtl_calcular(ActionEvent event) {
 
+    }
+
+    @FXML
+    void Voltar(ActionEvent event) throws IOException {
+        App.setRoot("Inicio");
     }
 
     public void mlt_calcular(ActionEvent actionEvent) {

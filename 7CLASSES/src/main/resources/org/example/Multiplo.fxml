@@ -13,5 +13,6 @@
       <Label layoutX="115.0" layoutY="60.0" text="Numero 1" />
       <Label layoutX="115.0" layoutY="163.0" text="Numero 1" />
       <Label fx:id="lbl_resultado" layoutX="261.0" layoutY="307.0" text="..." />
+      <Button layoutX="92.0" layoutY="335.0" mnemonicParsing="false" onAction="#Voltar" text="Voltar" />
    </children>
 </AnchorPane>
