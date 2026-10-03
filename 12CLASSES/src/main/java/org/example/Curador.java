@@ -19,16 +19,15 @@ public class Curador {
     public int getAnosExperiencia() { return anosExperiencia; }
     public void setAnosExperiencia(int anosExperiencia) { this.anosExperiencia = anosExperiencia; }
 
-    public void catalogarObra(String nomeObra) {
-        System.out.println("O curador " + nome + " catalogou a obra: " + nomeObra);
+    public String catalogarObra(String nomeObra) {
+        return ("O curador " + nome + " catalogou a obra: " + nomeObra);
     }
 
-    public boolean aprovarObra() {
-        System.out.println("Peça inspecionada e aprovada pelo especialista em " + especialidade + " (" + nome + ").");
-        return true;
+    public String aprovarObra() {
+        return ("Peça inspecionada e aprovada pelo especialista em " + especialidade + " (" + nome + ").");
     }
 
-    public void guiar(int quantidadePessoas) {
-        System.out.println(nome + " está guiando uma visita para " + quantidadePessoas + " pessoas.");
+    public String guiar(int quantidadePessoas) {
+        return (nome + " está guiando uma visita para " + quantidadePessoas + " pessoas.");
     }
 }

@@ -29,7 +29,7 @@ public class ClienteController {
 
     @FXML
     private TextField txt_valor;
-    private Cliente n;
+    private Cliente n = new Cliente(txt_nome.getText(), txt_cpf.getText(), Double.parseDouble(txt_saldo.getText()));
 
     @FXML
     void Voltar(ActionEvent event) throws IOException {
@@ -45,7 +45,6 @@ public class ClienteController {
 
     @FXML
     void cadastraCliente(ActionEvent event) {
-     n = new Cliente(txt_nome.getText(), txt_cpf.getText(), Double.parseDouble(txt_saldo.getText()));
      txt_result.setText("CadastroEfetuado");
      txt_cpf.clear();
      txt_nome.clear();
