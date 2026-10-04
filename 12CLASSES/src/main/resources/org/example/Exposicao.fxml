@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="600.0" prefWidth="625.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ExposicaoController">
+   <children>
+      <Button layoutX="445.0" layoutY="102.0" mnemonicParsing="false" onAction="#abrir" text="Abrir Exposição" />
+      <Button layoutX="445.0" layoutY="196.0" mnemonicParsing="false" onAction="#vender" text="Vender Ingressos" />
+      <Button layoutX="445.0" layoutY="300.0" mnemonicParsing="false" onAction="#encerra" text="Encerrar Visitação" />
+      <Label layoutX="94.0" layoutY="79.0" text="Nome da Exibição" />
+      <Label layoutX="94.0" layoutY="188.0" text="Sala" />
+      <TextField fx:id="txt_exposição" layoutX="94.0" layoutY="115.0" prefHeight="25.0" prefWidth="184.0" />
+      <TextField fx:id="txt_sala" layoutX="94.0" layoutY="221.0" prefHeight="25.0" prefWidth="184.0" />
+      <Label fx:id="lbl_result" layoutX="278.0" layoutY="482.0" text="....." />
+      <Button layoutX="92.0" layoutY="396.0" mnemonicParsing="false" onAction="#Voltar" text="Voltar" />
+      <TextField fx:id="txt_sala1" layoutX="98.0" layoutY="325.0" prefHeight="25.0" prefWidth="184.0" />
+      <Label layoutX="98.0" layoutY="304.0" text="Informe a quantidade de Ingressos a serem vendidos" />
+   </children>
 </AnchorPane>
