@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="600.0" prefWidth="625.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.MeioController">
+   <children>
+      <Button layoutX="469.0" layoutY="396.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+      <Button layoutX="420.0" layoutY="300.0" mnemonicParsing="false" onAction="#verificar" text="Verificar Disponibilidade" />
+      <Button layoutX="454.0" layoutY="196.0" mnemonicParsing="false" onAction="#limpar" text="Limpar Tela" />
+      <Button layoutX="435.0" layoutY="100.0" mnemonicParsing="false" onAction="#preparar" text="Preparar Superficie" />
+      <TextField fx:id="txt_meio" layoutX="63.0" layoutY="100.0" />
+      <TextField fx:id="txt_tipo" layoutX="63.0" layoutY="196.0" />
+      <CheckBox fx:id="chk_digital" layoutX="63.0" layoutY="283.0" mnemonicParsing="false" text="Arte Digital" />
+      <Label layoutX="63.0" layoutY="173.0" prefHeight="17.0" prefWidth="24.0" text="Tipo" />
+      <Label layoutX="63.0" layoutY="74.0" text="Nome do Meio de Arte" />
+      <Label fx:id="lbl_result" layoutX="225.0" layoutY="468.0" text="Label" />
+   </children>
 </AnchorPane>

@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="600.0" prefWidth="625.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ParqueController">
+   <children>
+      <Button layoutX="497.0" layoutY="372.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+      <Button layoutX="480.0" layoutY="105.0" mnemonicParsing="false" onAction="#abrir" text="Abrir Parque" />
+      <Button layoutX="496.0" layoutY="192.0" mnemonicParsing="false" onAction="#lotacao" text="Lotação" />
+      <Button layoutX="457.0" layoutY="275.0" mnemonicParsing="false" onAction="#solicitar" text="Solicitar Manutenção" />
+      <TextField fx:id="txt_nome" layoutX="55.0" layoutY="105.0" />
+      <TextField fx:id="txt_capacidade" layoutX="55.0" layoutY="192.0" />
+      <TextField fx:id="txt_atuais" layoutX="55.0" layoutY="275.0" />
+      <TextField fx:id="txt_trilha" layoutX="55.0" layoutY="372.0" />
+      <Label layoutX="55.0" layoutY="72.0" text="Nome do Parque" />
+      <Label layoutX="55.0" layoutY="164.0" text="Capacidade do Parque" />
+      <Label layoutX="55.0" layoutY="339.0" text="Nome da Trilha para Manutenção" />
+      <Label layoutX="55.0" layoutY="241.0" text="Habitantes Atuais" />
+      <Label fx:id="lbl_result" layoutX="266.0" layoutY="458.0" text="...." />
+   </children>
 </AnchorPane>

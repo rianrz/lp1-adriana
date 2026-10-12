@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="625.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.MascaraController">
+   <children>
+      <Button layoutX="499.0" layoutY="424.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+      <Button layoutX="467.0" layoutY="320.0" mnemonicParsing="false" onAction="#solicitar" text="Solicitar Restaução" />
+      <Button layoutX="473.0" layoutY="212.0" mnemonicParsing="false" onAction="#compatibilidade" text="Compatibilidade" />
+      <Button layoutX="476.0" layoutY="112.0" mnemonicParsing="false" onAction="#descrever" text="Descrever Obra" />
+      <TextField fx:id="txt_etnia" layoutX="73.0" layoutY="112.0" />
+      <TextField fx:id="txt_material" layoutX="73.0" layoutY="212.0" />
+      <TextField fx:id="txt_simbolismo" layoutX="73.0" layoutY="320.0" />
+      <TextField fx:id="txt_proibido" layoutX="73.0" layoutY="424.0" />
+      <Label fx:id="lbl_result" layoutX="299.0" layoutY="507.0" text="......" />
+      <Label layoutX="73.0" layoutY="392.0" text="Material Proibido" />
+      <Label layoutX="73.0" layoutY="283.0" text="Simbolismo" />
+      <Label layoutX="73.0" layoutY="177.0" text="Material Predominante" />
+      <Label layoutX="73.0" layoutY="73.0" text="Etnia Originaria" />
+   </children>
+</AnchorPane>

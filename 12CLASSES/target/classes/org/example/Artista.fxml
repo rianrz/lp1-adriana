@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="600.0" prefWidth="625.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ArtistaController">
+   <children>
+      <Button layoutX="482.0" layoutY="382.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+      <Button layoutX="458.0" layoutY="288.0" mnemonicParsing="false" onAction="#pedirFeed" text="Pedir Feedback" />
+      <Button layoutX="456.0" layoutY="192.0" mnemonicParsing="false" onAction="#salvarPort" text="Salvar Portifólio" />
+      <Button layoutX="478.0" layoutY="101.0" mnemonicParsing="false" onAction="#praticar" text="Praticar" />
+      <TextField fx:id="txt_nome" layoutX="62.0" layoutY="101.0" />
+      <TextField fx:id="txt_nivel" layoutX="62.0" layoutY="192.0" />
+      <TextField fx:id="txt_arte" layoutX="62.0" layoutY="288.0" />
+      <Label layoutX="62.0" layoutY="75.0" text="Nome do Artista" />
+      <Label layoutX="62.0" layoutY="167.0" text="Nivel de Experiencia" />
+      <Label layoutX="62.0" layoutY="263.0" text="Total de Arte" />
+      <Label fx:id="lbl_result" layoutX="131.0" layoutY="432.0" text="....." />
+   </children>
 </AnchorPane>
