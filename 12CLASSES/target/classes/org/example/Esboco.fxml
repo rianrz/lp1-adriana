@@ -5,7 +5,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="625.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.EsbocoController">
    <children>
       <Button layoutX="416.0" layoutY="91.0" mnemonicParsing="false" onAction="#aplicaSombra" text="Aplicar Sombra" />
@@ -18,5 +17,6 @@
       <TextField fx:id="txt_minuto" layoutX="75.0" layoutY="288.0" prefHeight="25.0" prefWidth="191.0" />
       <Label layoutX="75.0" layoutY="262.0" text="Tempo de Desenho em Minutos" />
       <Label fx:id="txt_result" layoutX="291.0" layoutY="411.0" text="......" />
+      <Button layoutX="75.0" layoutY="509.0" mnemonicParsing="false" onAction="#Voltar" text="Voltar" />
    </children>
 </AnchorPane>

@@ -29,19 +29,19 @@ public class ProdutoController {
 
     @FXML
     void aplicar(ActionEvent event) {
-        Produto n = new Produto(txt_descricao.getText(), txt_tamanho.getText(),Integer.parseInt(txt_preco.getText()));
+        Produto n = new Produto(txt_descricao.getText(), txt_tamanho.getText(),Double.parseDouble(txt_preco.getText()));
         lbl_result.setText(n.aplicaDesconto(Double.parseDouble(txt_porcentagem.getText())));
     }
 
     @FXML
     void exibir(ActionEvent event) {
-        Produto n = new Produto(txt_descricao.getText(), txt_tamanho.getText(),Integer.parseInt(txt_preco.getText()));
+        Produto n = new Produto(txt_descricao.getText(), txt_tamanho.getText(),Double.parseDouble(txt_preco.getText()));
         lbl_result.setText(n.exibeEtiqueta());
     }
 
     @FXML
     void verificar(ActionEvent event) {
-        Produto n = new Produto(txt_descricao.getText(), txt_tamanho.getText(),Integer.parseInt(txt_preco.getText()));
+        Produto n = new Produto(txt_descricao.getText(), txt_tamanho.getText(),Double.parseDouble(txt_preco.getText()));
         lbl_result.setText(n.verificaTamanho(txt_desejado.getText()));
     }
 

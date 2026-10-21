@@ -27,8 +27,6 @@ public class CuradorController {
     @FXML
     private TextField txt_qtd;
 
-    private Curador n = new Curador(txt_nome.getText(), txt_especialidade.getText(), Integer.parseInt(txt_anos.getText()));
-
     @FXML
     void Voltar(ActionEvent event) throws IOException {
         App.setRoot("Menu");
@@ -36,11 +34,15 @@ public class CuradorController {
 
     @FXML
     void aprova(ActionEvent event) {
+        Curador n = new Curador(txt_nome.getText(), txt_especialidade.getText(), Integer.parseInt(txt_anos.getText()));
+
         lbl_result.setText(n.aprovarObra());
     }
 
     @FXML
     void cataloga(ActionEvent event) {
+        Curador n = new Curador(txt_nome.getText(), txt_especialidade.getText(), Integer.parseInt(txt_anos.getText()));
+
         n = new Curador(txt_nome.getText(), txt_especialidade.getText(), Integer.parseInt(txt_anos.getText()));
 
         lbl_result.setText(n.catalogarObra(txt_obra.getText()));
@@ -48,6 +50,8 @@ public class CuradorController {
 
     @FXML
     void guiar(ActionEvent event) {
+        Curador n = new Curador(txt_nome.getText(), txt_especialidade.getText(), Integer.parseInt(txt_anos.getText()));
+
         lbl_result.setText(n.guiar(Integer.parseInt(txt_qtd.getText())));
     }
 

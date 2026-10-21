@@ -5,7 +5,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="625.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ExposicaoController">
    <children>
       <Button layoutX="445.0" layoutY="102.0" mnemonicParsing="false" onAction="#abrir" text="Abrir Exposição" />
@@ -17,7 +16,7 @@
       <TextField fx:id="txt_sala" layoutX="94.0" layoutY="221.0" prefHeight="25.0" prefWidth="184.0" />
       <Label fx:id="lbl_result" layoutX="278.0" layoutY="482.0" text="....." />
       <Button layoutX="92.0" layoutY="396.0" mnemonicParsing="false" onAction="#Voltar" text="Voltar" />
-      <TextField fx:id="txt_sala1" layoutX="98.0" layoutY="325.0" prefHeight="25.0" prefWidth="184.0" />
+      <TextField fx:id="txt_ingresso" layoutX="98.0" layoutY="325.0" prefHeight="25.0" prefWidth="184.0" />
       <Label layoutX="98.0" layoutY="304.0" text="Informe a quantidade de Ingressos a serem vendidos" />
    </children>
 </AnchorPane>

@@ -48,15 +48,13 @@ public class ClienteController {
     void cadastraCliente(ActionEvent event) {
         Cliente n = new Cliente(txt_nome.getText(), txt_cpf.getText(), Double.parseDouble(txt_saldo.getText()));
         txt_result.setText("CadastroEfetuado");
-     txt_cpf.clear();
-     txt_nome.clear();
-     txt_saldo.clear();
     }
 
     @FXML
     void comprarCliente(ActionEvent event) {
         Cliente n = new Cliente(txt_nome.getText(), txt_cpf.getText(), Double.parseDouble(txt_saldo.getText()));
         txt_result.setText(n.realizarCompra(Double.parseDouble(txt_valor.getText())));
+        txt_saldo.setText(String.valueOf(n.getValorEmCarteira()));
         txt_valor.clear();
     }
 

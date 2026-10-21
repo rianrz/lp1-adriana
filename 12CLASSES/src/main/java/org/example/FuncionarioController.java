@@ -22,6 +22,9 @@ public class FuncionarioController {
     private TextField txt_cargo;
 
     @FXML
+    private TextField txt_atuais;
+
+    @FXML
     private TextField txt_nome;
 
     @FXML
@@ -29,19 +32,19 @@ public class FuncionarioController {
 
     @FXML
     void aumento(ActionEvent event) {
-        Funcionario n = new Funcionario(txt_nome.getText(), txt_cargo.getText(), Integer.parseInt(txt_ano.getText()));
+        Funcionario n = new Funcionario(txt_nome.getText(), txt_cargo.getText(), Integer.parseInt(txt_ano.getText()), Double.parseDouble(txt_atuais.getText()));
         lbl_result.setText(n.solicitarAumento(Double.parseDouble(txt_aumento.getText())));
     }
 
     @FXML
     void mudar(ActionEvent event) {
-        Funcionario n = new Funcionario(txt_nome.getText(), txt_cargo.getText(), Integer.parseInt(txt_ano.getText()));
+        Funcionario n = new Funcionario(txt_nome.getText(), txt_cargo.getText(), Integer.parseInt(txt_ano.getText()), Double.parseDouble(txt_atuais.getText()));
         lbl_result.setText(n.mudarCargo());
     }
 
     @FXML
     void venda(ActionEvent event) {
-        Funcionario n = new Funcionario(txt_nome.getText(), txt_cargo.getText(), Integer.parseInt(txt_ano.getText()));
+        Funcionario n = new Funcionario(txt_nome.getText(), txt_cargo.getText(), Integer.parseInt(txt_ano.getText()), Double.parseDouble(txt_atuais.getText()));
         lbl_result.setText(n.registrarVenda(Double.parseDouble(txt_venda.getText())));
     }
 
