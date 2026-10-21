@@ -14,7 +14,7 @@ public class InicioController {
 
     @FXML
     void camelo(ActionEvent event) throws  IOException{
-        App.setRoot("Camelos");
+        App.setRoot("Camelo");
     }
 
     @FXML

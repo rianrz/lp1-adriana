@@ -2,9 +2,9 @@ package org.example;
 
 public class Camelo {
     public String execute(int camelos){
-        double velho = (double) camelos / 2;
-        double meio = (double) camelos / 3;
-        double novo = (double) camelos / 9;
+        int velho = (int) camelos / 2;
+        int meio = (int) camelos / 3;
+        int novo = (int) camelos / 9;
         double sobraram = camelos - velho - meio - novo;
 
         return "Segue a lista da Quantidade de camelos para cada Irmão:\n" +

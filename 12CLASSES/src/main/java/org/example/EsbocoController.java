@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+
 public class EsbocoController {
 
     @FXML
@@ -18,6 +20,12 @@ public class EsbocoController {
 
     @FXML
     private Label txt_result;
+
+    @FXML
+    void Voltar(ActionEvent event) throws IOException {
+        App.setRoot("Menu");
+    }
+
 
     @FXML
     void Exportar(ActionEvent event) {
