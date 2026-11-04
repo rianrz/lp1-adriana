@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="625.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.FuncionarioController">
+   <children>
+      <TextField fx:id="txt_nome" layoutX="72.0" layoutY="92.0" />
+      <TextField fx:id="txt_cargo" layoutX="72.0" layoutY="186.0" />
+      <TextField fx:id="txt_ano" layoutX="70.0" layoutY="278.0" />
+      <Label fx:id="lbl_result" layoutX="224.0" layoutY="482.0" text="...." />
+      <Label layoutX="74.0" layoutY="75.0" text="Nome" />
+      <Label layoutX="75.0" layoutY="168.0" text="Cargo" />
+      <Label layoutX="70.0" layoutY="260.0" text="Ano de Inicio" />
+      <Button layoutX="430.0" layoutY="80.0" mnemonicParsing="false" onAction="#solicitar" text="Solicitar Aumento" />
+      <Button layoutX="429.0" layoutY="175.0" mnemonicParsing="false" onAction="#ponto" text="Bater Ponto" />
+      <Button layoutX="432.0" layoutY="277.0" mnemonicParsing="false" onAction="#registra" text="Registrar Venda" />
+      <Button layoutX="434.0" layoutY="398.0" mnemonicParsing="false" onAction="#Voltar" text="Voltar" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="625.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ClienteController">
+   <children>
+      <TextField fx:id="txt_nome" layoutX="76.0" layoutY="77.0" />
+      <TextField fx:id="txt_produto" layoutX="76.0" layoutY="483.0" />
+      <TextField fx:id="txt_saldo" layoutX="76.0" layoutY="269.0" />
+      <Button layoutX="364.0" layoutY="56.0" mnemonicParsing="false" onAction="#cadastraCliente" text="Cadastrar Cliente" />
+      <Label layoutX="76.0" layoutY="51.0" text="Nome" />
+      <Label layoutX="76.0" layoutY="138.0" text="CPF" />
+      <Label layoutX="79.0" layoutY="242.0" text="Saldo" />
+      <Label fx:id="txt_result" layoutX="409.0" layoutY="336.0" text="..." />
+      <Label layoutX="76.0" layoutY="353.0" text="valor da compra" />
+      <TextField fx:id="txt_valor" layoutX="76.0" layoutY="382.0" />
+      <TextField fx:id="txt_cpf" layoutX="76.0" layoutY="155.0" />
+      <Label layoutX="79.0" layoutY="456.0" text="Produto para troca" />
+      <TextField fx:id="txt_soma" layoutX="339.0" layoutY="483.0" />
+      <Label layoutX="339.0" layoutY="456.0" text="Aumentar saldo" />
+      <Button layoutX="382.0" layoutY="134.0" mnemonicParsing="false" onAction="#comprarCliente" text="Comprar" />
+      <Button layoutX="389.0" layoutY="196.0" mnemonicParsing="false" onAction="#trocarCliente" text="Trocar" />
+      <Button layoutX="359.0" layoutY="269.0" mnemonicParsing="false" onAction="#adicionaCliente" text="Adicionar Fundos" />
+      <Button layoutX="232.0" layoutY="565.0" mnemonicParsing="false" onAction="#Voltar" text="Voltar" />
+   </children>
+</AnchorPane>
