@@ -1,0 +1,64 @@
+
+CREATE DATABASE IF NOT EXISTS db_dorinhos;
+USE db_dorinhos;
+
+-- 1. TABELA: PRODUTO
+DROP TABLE IF EXISTS produto;
+CREATE TABLE produto (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    categoria VARCHAR(50) NOT NULL,
+    preco DECIMAL(10, 2) NOT NULL DEFAULT 0.00
+);
+
+-- 2. TABELA: CLIENTE
+DROP TABLE IF EXISTS cliente;
+CREATE TABLE cliente (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    cpf VARCHAR(14) NOT NULL UNIQUE,
+    saldo DECIMAL(10, 2) NOT NULL DEFAULT 0.00,
+    produto_troca VARCHAR(100)
+);
+
+-- 3. TABELA: FUNCIONARIO
+DROP TABLE IF EXISTS funcionario;
+CREATE TABLE funcionario (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    cargo VARCHAR(50) NOT NULL,
+    ano_inicio INT NOT NULL
+);
+
+
+-- 4. TABELA: EQUIPAMENTO
+
+DROP TABLE IF EXISTS equipamento;
+CREATE TABLE equipamento (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    estado VARCHAR(50) NOT NULL,
+    esta_alugado BOOLEAN NOT NULL DEFAULT FALSE
+);
+
+
+-- 5. TABELA: ARTISTA
+DROP TABLE IF EXISTS artista;
+CREATE TABLE artista (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    experiencia VARCHAR(50) NOT NULL,
+    total_artes INT NOT NULL DEFAULT 0
+);
+
+
+-- 6. TABELA: CURADOR
+DROP TABLE IF EXISTS curador;
+CREATE TABLE curador (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    especialidade VARCHAR(100) NOT NULL,
+    anos_experiencia INT NOT NULL DEFAULT 0,
+    nome_obra VARCHAR(100),
+    qtd_pessoas_museu INT DEFAULT 0
+);

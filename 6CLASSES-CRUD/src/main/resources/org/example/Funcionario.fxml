@@ -3,11 +3,14 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -16,12 +19,12 @@
     <top>
         <VBox alignment="CENTER" styleClass="header-container" BorderPane.alignment="CENTER">
             <children>
-                <Label text="DORINHO'S" textFill="WHITE">
+                <Label text="Funcionarios">
                     <font>
                         <Font name="System Bold" size="22.0" />
                     </font>
                 </Label>
-                <Label text="Gestão de Funcionários &amp; Vendas" textFill="#cccccc">
+                <Label text="Gestão de Funcionários &amp; Vendas">
                     <font>
                         <Font size="12.0" />
                     </font>
@@ -33,12 +36,12 @@
         </VBox>
     </top>
     <center>
-        <VBox spacing="20.0" BorderPane.alignment="CENTER">
+        <VBox spacing="12.0" BorderPane.alignment="CENTER">
             <padding>
-                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
             </padding>
             <children>
-                <GridPane hgap="12.0" vgap="15.0">
+                <GridPane hgap="12.0" vgap="10.0">
                     <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="150.0" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="420.0" minWidth="10.0" prefWidth="398.0" />
@@ -60,32 +63,44 @@
                     </children>
                 </GridPane>
 
-                <HBox alignment="CENTER" spacing="12.0">
+                <HBox alignment="CENTER" spacing="10.0">
                     <children>
-                        <Button mnemonicParsing="false" onAction="#ponto" prefWidth="140.0" styleClass="btn-primary" text="Bater Ponto" />
-                        <Button mnemonicParsing="false" onAction="#registra" prefWidth="140.0" styleClass="btn-secondary" text="Registrar Venda" />
-                        <Button mnemonicParsing="false" onAction="#solicitar" prefWidth="140.0" styleClass="btn-secondary" text="Solicitar Aumento" />
+                        <Button mnemonicParsing="false" onAction="#ponto" prefWidth="130.0" styleClass="btn-primary" text="Cadastrar / Ponto" />
+                        <Button mnemonicParsing="false" onAction="#registra" prefWidth="130.0" styleClass="btn-secondary" text="Registrar Venda" />
+                        <Button mnemonicParsing="false" onAction="#solicitar" prefWidth="130.0" styleClass="btn-secondary" text="Solicitar Aumento" />
                     </children>
                 </HBox>
 
-                <VBox alignment="CENTER" prefHeight="100.0" style="-fx-background-color: #ffffff; -fx-border-color: #d1d5db; -fx-border-radius: 4px; -fx-padding: 10px;">
+                <!-- Status em Label -->
+                <HBox alignment="CENTER_LEFT" spacing="5.0">
                     <children>
-                        <Label text="Log / Confirmação de Ação:" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;" />
-                        <Label fx:id="lbl_result" text="...." textAlignment="CENTER" wrapText="true">
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #545454;" text="Status:" />
+                        <Label fx:id="lbl_result" text="Pronto." textFill="#101d2c">
                             <font>
-                                <Font name="System Bold" size="13.0" />
+                                <Font name="System Bold" size="12.0" />
                             </font>
                         </Label>
                     </children>
-                </VBox>
+                </HBox>
+
+                <!-- Tabela de Funcionários -->
+                <TableView fx:id="tblFuncionarios" prefHeight="230.0" prefWidth="560.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colNome" prefWidth="220.0" text="Nome" />
+                        <TableColumn fx:id="colCargo" prefWidth="200.0" text="Cargo" />
+                        <TableColumn fx:id="colAno" prefWidth="135.0" text="Ano de Início" />
+                    </columns>
+                </TableView>
             </children>
         </VBox>
     </center>
-    <bottom>
-        <HBox alignment="CENTER_RIGHT" style="-fx-padding: 0 20 20 20;">
-            <children>
-                <Button mnemonicParsing="false" onAction="#Voltar" prefWidth="100.0" styleClass="btn-neutral" text="Voltar" />
-            </children>
-        </HBox>
-    </bottom>
+   <bottom>
+      <HBox alignment="CENTER_RIGHT" style="-fx-padding: 0 20 15 20;" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#Voltar" prefWidth="100.0" styleClass="btn-neutral" text="Deletar Linha" />
+            <Region prefHeight="31.0" prefWidth="356.0" />
+            <Button mnemonicParsing="false" onAction="#Voltar" prefWidth="100.0" styleClass="btn-neutral" text="Voltar" />
+         </children>
+      </HBox>
+   </bottom>
 </BorderPane>

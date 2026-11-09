@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
 public class EquipamentoController {
@@ -12,7 +14,19 @@ public class EquipamentoController {
     private CheckBox chk_aluguel;
 
     @FXML
+    private TableColumn<?, ?> colAlugado;
+
+    @FXML
+    private TableColumn<?, ?> colEstado;
+
+    @FXML
+    private TableColumn<?, ?> colNome;
+
+    @FXML
     private Label lbl_result;
+
+    @FXML
+    private TableView<?> tblEquipamentos;
 
     @FXML
     private TextField txt_estado;
@@ -20,32 +34,24 @@ public class EquipamentoController {
     @FXML
     private TextField txt_nome;
 
+    @FXML
+    void Voltar(ActionEvent event) {
+
+    }
 
     @FXML
     void alugar(ActionEvent event) {
-        Equipamento n = new Equipamento(txt_nome.getText(),txt_estado.getText());
 
-        lbl_result.setText(n.realizarAluguel());
-
-        if (!chk_aluguel.isSelected()) {
-            chk_aluguel.setSelected(true);
-        }
     }
 
     @FXML
     void devolu(ActionEvent event) {
-        Equipamento n = new Equipamento(txt_nome.getText(),txt_estado.getText());
-        lbl_result.setText(n.realizarDevolucao());
-
-
-            chk_aluguel.setSelected(n.isEstaAlugado());
 
     }
 
     @FXML
     void inspecionar(ActionEvent event) {
-        Equipamento n = new Equipamento(txt_nome.getText(),txt_estado.getText());
-        lbl_result.setText(n.inspecionar());
+
     }
 
 }

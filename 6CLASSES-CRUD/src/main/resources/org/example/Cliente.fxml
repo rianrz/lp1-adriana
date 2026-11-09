@@ -3,11 +3,14 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -16,12 +19,12 @@
     <top>
         <VBox alignment="CENTER" styleClass="header-container" BorderPane.alignment="CENTER">
             <children>
-                <Label text="DORINHO'S" textFill="WHITE">
+                <Label text="Clientes">
                     <font>
                         <Font name="System Bold" size="22.0" />
                     </font>
                 </Label>
-                <Label text="Gestão de Clientes &amp; Atendimento" textFill="#cccccc">
+                <Label text="Gestão de Clientes &amp; Atendimento">
                     <font>
                         <Font size="12.0" />
                     </font>
@@ -33,23 +36,23 @@
         </VBox>
     </top>
     <center>
-        <VBox spacing="15.0" BorderPane.alignment="CENTER">
+        <VBox spacing="10.0" BorderPane.alignment="CENTER">
             <padding>
-                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
             </padding>
             <children>
-                <GridPane hgap="12.0" vgap="10.0">
+                <GridPane hgap="12.0" vgap="8.0">
                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="140.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="420.0" minWidth="10.0" prefWidth="408.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="130.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="420.0" minWidth="10.0" prefWidth="418.0" />
                     </columnConstraints>
                     <rowConstraints>
-                        <RowConstraints minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="28.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="28.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="28.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="28.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="28.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="28.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
                         <Label text="Nome:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
@@ -74,29 +77,42 @@
 
                 <HBox alignment="CENTER" spacing="10.0">
                     <children>
-                        <Button mnemonicParsing="false" onAction="#cadastraCliente" prefWidth="130.0" styleClass="btn-primary" text="Cadastrar" />
-                        <Button mnemonicParsing="false" onAction="#adicionaCliente" prefWidth="130.0" styleClass="btn-secondary" text="+ Saldo" />
-                        <Button mnemonicParsing="false" onAction="#comprarCliente" prefWidth="130.0" styleClass="btn-primary" text="Comprar" />
-                        <Button mnemonicParsing="false" onAction="#trocarCliente" prefWidth="130.0" styleClass="btn-secondary" text="Trocar" />
+                        <Button mnemonicParsing="false" onAction="#cadastraCliente" prefWidth="120.0" styleClass="btn-primary" text="Cadastrar" />
+                        <Button mnemonicParsing="false" onAction="#adicionaCliente" prefWidth="120.0" styleClass="btn-secondary" text="+ Saldo" />
+                        <Button mnemonicParsing="false" onAction="#comprarCliente" prefWidth="120.0" styleClass="btn-primary" text="Comprar" />
+                        <Button mnemonicParsing="false" onAction="#trocarCliente" prefWidth="120.0" styleClass="btn-secondary" text="Trocar" />
                     </children>
                 </HBox>
 
-                <VBox alignment="CENTER" prefHeight="80.0" style="-fx-background-color: #ffffff; -fx-border-color: #d1d5db; -fx-border-radius: 4px; -fx-padding: 10px;">
+                <!-- Status de Operação em Label Simples -->
+                <HBox alignment="CENTER_LEFT" spacing="5.0">
                     <children>
-                        <Label text="Status da Operação:" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;" />
-                        <Label fx:id="txt_result" text="..." textAlignment="CENTER" wrapText="true">
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #545454;" text="Status:" />
+                        <Label fx:id="txt_result" text="Aguardando ação..." textFill="#101d2c">
                             <font>
-                                <Font name="System Bold" size="13.0" />
+                                <Font name="System Bold" size="12.0" />
                             </font>
                         </Label>
                     </children>
-                </VBox>
+                </HBox>
+
+                <!-- Tabela em substituição ao VBox de Log -->
+                <TableView fx:id="tblClientes" prefHeight="180.0" prefWidth="560.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colNome" prefWidth="160.0" text="Nome" />
+                        <TableColumn fx:id="colCpf" prefWidth="120.0" text="CPF" />
+                        <TableColumn fx:id="colSaldo" prefWidth="100.0" text="Saldo (R$)" />
+                        <TableColumn fx:id="colProduto" prefWidth="175.0" text="Último Produto / Troca" />
+                    </columns>
+                </TableView>
             </children>
         </VBox>
     </center>
     <bottom>
-        <HBox alignment="CENTER_RIGHT" style="-fx-padding: 0 20 20 20;">
+        <HBox alignment="CENTER_RIGHT" style="-fx-padding: 0 20 15 20;">
             <children>
+            <Button mnemonicParsing="false" onAction="#Voltar" prefWidth="100.0" styleClass="btn-neutral" text="Deletar Linha" />
+            <Region prefHeight="31.0" prefWidth="356.0" />
                 <Button mnemonicParsing="false" onAction="#Voltar" prefWidth="100.0" styleClass="btn-neutral" text="Voltar" />
             </children>
         </HBox>

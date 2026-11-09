@@ -3,11 +3,26 @@ package org.example;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
-import java.io.IOException;
-
 public class ClienteController {
+
+    @FXML
+    private TableColumn<?, ?> colCpf;
+
+    @FXML
+    private TableColumn<?, ?> colNome;
+
+    @FXML
+    private TableColumn<?, ?> colProduto;
+
+    @FXML
+    private TableColumn<?, ?> colSaldo;
+
+    @FXML
+    private TableView<?> tblClientes;
 
     @FXML
     private TextField txt_cpf;
@@ -31,39 +46,28 @@ public class ClienteController {
     private TextField txt_valor;
 
     @FXML
-    void Voltar(ActionEvent event) throws IOException {
-        App.setRoot("Menu");
-    }
+    void Voltar(ActionEvent event) {
 
+    }
 
     @FXML
     void adicionaCliente(ActionEvent event) {
-        Cliente n = new Cliente(txt_nome.getText(), txt_cpf.getText(), Double.parseDouble(txt_saldo.getText()));
-        n.adicionarSaldo(Double.parseDouble(txt_soma.getText()));
-        txt_soma.clear();
+
     }
 
     @FXML
     void cadastraCliente(ActionEvent event) {
-        Cliente n = new Cliente(txt_nome.getText(), txt_cpf.getText(), Double.parseDouble(txt_saldo.getText()));
-        txt_result.setText("CadastroEfetuado");
-     txt_cpf.clear();
-     txt_nome.clear();
-     txt_saldo.clear();
+
     }
 
     @FXML
     void comprarCliente(ActionEvent event) {
-        Cliente n = new Cliente(txt_nome.getText(), txt_cpf.getText(), Double.parseDouble(txt_saldo.getText()));
-        txt_result.setText(n.realizarCompra(Double.parseDouble(txt_valor.getText())));
-        txt_valor.clear();
+
     }
 
     @FXML
     void trocarCliente(ActionEvent event) {
-        Cliente n = new Cliente(txt_nome.getText(), txt_cpf.getText(), Double.parseDouble(txt_saldo.getText()));
-        txt_result.setText(n.solicitarTroca(txt_produto.getText()));
-        txt_produto.clear();
+
     }
 
 }

@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -21,12 +22,12 @@
     <top>
         <VBox alignment="CENTER" styleClass="header-container" BorderPane.alignment="CENTER">
             <children>
-                <Label text="TERNOS">
+                <Label text="Produtos">
                     <font>
-                        <Font name="System Bold" size="22.0" />
+                        <Font name="System Bold" size="24.0" />
                     </font>
                 </Label>
-                <Label text="Gerenciamento de Catálogo - Moda Masculina" textFill="#545454">
+                <Label text="Gerenciamento de Catálogo" textFill="#545454">
                     <font>
                         <Font size="12.0" />
                     </font>
@@ -99,4 +100,13 @@
             </children>
         </VBox>
     </center>
+   <bottom>
+      <HBox alignment="CENTER_RIGHT" style="-fx-padding: 0 20 15 20;" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#Voltar" prefWidth="100.0" styleClass="btn-neutral" text="Deletar Linha" />
+            <Region prefHeight="31.0" prefWidth="356.0" />
+            <Button mnemonicParsing="false" onAction="#Voltar" prefWidth="100.0" styleClass="btn-neutral" text="Voltar" />
+         </children>
+      </HBox>
+   </bottom>
 </BorderPane>

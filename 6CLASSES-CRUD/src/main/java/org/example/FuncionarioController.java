@@ -3,14 +3,26 @@ package org.example;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-
-import java.io.IOException;
 
 public class FuncionarioController {
 
     @FXML
+    private TableColumn<?, ?> colAno;
+
+    @FXML
+    private TableColumn<?, ?> colCargo;
+
+    @FXML
+    private TableColumn<?, ?> colNome;
+
+    @FXML
     private Label lbl_result;
+
+    @FXML
+    private TableView<?> tblFuncionarios;
 
     @FXML
     private TextField txt_ano;
@@ -22,25 +34,23 @@ public class FuncionarioController {
     private TextField txt_nome;
 
     @FXML
-    void Voltar(ActionEvent event) throws IOException {
-        App.setRoot("Menu");
+    void Voltar(ActionEvent event) {
+
     }
 
     @FXML
     void ponto(ActionEvent event) {
-        Funcionario n = new Funcionario(txt_nome.getText(), txt_cargo.getText(), Integer.parseInt(txt_ano.getText()));
-        lbl_result.setText(n.baterPonto());
+
     }
 
     @FXML
     void registra(ActionEvent event) {
-        Funcionario n = new Funcionario(txt_nome.getText(), txt_cargo.getText(), Integer.parseInt(txt_ano.getText()));
+
     }
 
     @FXML
     void solicitar(ActionEvent event) {
-        Funcionario n = new Funcionario(txt_nome.getText(), txt_cargo.getText(), Integer.parseInt(txt_ano.getText()));
-        lbl_result.setText(n.solicitarAumento());
+
     }
 
 }

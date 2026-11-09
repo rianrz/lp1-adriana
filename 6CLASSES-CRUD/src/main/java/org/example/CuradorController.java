@@ -3,14 +3,32 @@ package org.example;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-
-import java.io.IOException;
 
 public class CuradorController {
 
     @FXML
+    private TableColumn<?, ?> colAnos;
+
+    @FXML
+    private TableColumn<?, ?> colCurador;
+
+    @FXML
+    private TableColumn<?, ?> colEspecialidade;
+
+    @FXML
+    private TableColumn<?, ?> colObra;
+
+    @FXML
+    private TableColumn<?, ?> colQtd;
+
+    @FXML
     private Label lbl_result;
+
+    @FXML
+    private TableView<?> tblCuradores;
 
     @FXML
     private TextField txt_anos;
@@ -27,28 +45,24 @@ public class CuradorController {
     @FXML
     private TextField txt_qtd;
 
-    private Curador n = new Curador(txt_nome.getText(), txt_especialidade.getText(), Integer.parseInt(txt_anos.getText()));
-
     @FXML
-    void Voltar(ActionEvent event) throws IOException {
-        App.setRoot("Menu");
+    void Voltar(ActionEvent event) {
+
     }
 
     @FXML
     void aprova(ActionEvent event) {
-        lbl_result.setText(n.aprovarObra());
+
     }
 
     @FXML
     void cataloga(ActionEvent event) {
-        n = new Curador(txt_nome.getText(), txt_especialidade.getText(), Integer.parseInt(txt_anos.getText()));
 
-        lbl_result.setText(n.catalogarObra(txt_obra.getText()));
     }
 
     @FXML
     void guiar(ActionEvent event) {
-        lbl_result.setText(n.guiar(Integer.parseInt(txt_qtd.getText())));
+
     }
 
 }
