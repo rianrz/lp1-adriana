@@ -1,22 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
+<BorderPane prefHeight="625.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.EquipamentoController">
+    <top>
+        <VBox alignment="CENTER" styleClass="header-container" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="DORINHO'S" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="22.0" />
+                    </font>
+                </Label>
+                <Label text="Controle de Equipamentos &amp; Aluguel" textFill="#cccccc">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </Label>
+            </children>
+            <padding>
+                <Insets bottom="15.0" top="15.0" />
+            </padding>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="20.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <children>
+                <GridPane hgap="12.0" vgap="15.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="150.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="420.0" minWidth="10.0" prefWidth="398.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label text="Nome:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <TextField fx:id="txt_nome" promptText="Nome do equipamento" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-<AnchorPane prefHeight="600.0" prefWidth="625.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.EquipamentoController">
-   <children>
-      <TextField fx:id="txt_nome" layoutX="73.0" layoutY="99.0" />
-      <TextField fx:id="txt_estado" layoutX="73.0" layoutY="222.0" />
-      <Button layoutX="410.0" layoutY="140.0" mnemonicParsing="false" onAction="#alugar" text="Alugar Equipamento" />
-      <CheckBox fx:id="chk_aluguel" layoutX="92.0" layoutY="368.0" mnemonicParsing="false" text="Esta Alugado" />
-      <Label layoutX="78.0" layoutY="180.0" text="Estado" />
-      <Label layoutX="74.0" layoutY="67.0" text="Nome" />
-      <Button layoutX="410.0" layoutY="197.0" mnemonicParsing="false" onAction="#devolu" text="Devolução" />
-      <Button layoutX="410.0" layoutY="259.0" mnemonicParsing="false" onAction="#inspecionar" text="inspecionar" />
-      <Label fx:id="lbl_result" layoutX="421.0" layoutY="360.0" text="...." />
-   </children>
-</AnchorPane>
+                        <Label text="Estado:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <TextField fx:id="txt_estado" promptText="Ex: Novo, Em manutenção, Usado" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                        <Label text="Situação:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <CheckBox fx:id="chk_aluguel" mnemonicParsing="false" text="Está Alugado" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    </children>
+                </GridPane>
+
+                <HBox alignment="CENTER" spacing="12.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#alugar" prefWidth="140.0" styleClass="btn-primary" text="Alugar" />
+                        <Button mnemonicParsing="false" onAction="#devolu" prefWidth="140.0" styleClass="btn-secondary" text="Devolução" />
+                        <Button mnemonicParsing="false" onAction="#inspecionar" prefWidth="140.0" styleClass="btn-neutral" text="Inspecionar" />
+                    </children>
+                </HBox>
+
+                <VBox alignment="CENTER" prefHeight="100.0" style="-fx-background-color: #ffffff; -fx-border-color: #d1d5db; -fx-border-radius: 4px; -fx-padding: 10px;">
+                    <children>
+                        <Label text="Status da Inspeção / Aluguel:" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;" />
+                        <Label fx:id="lbl_result" text="...." textAlignment="CENTER" wrapText="true">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" style="-fx-padding: 0 20 20 20;" />
+    </bottom>
+</BorderPane>

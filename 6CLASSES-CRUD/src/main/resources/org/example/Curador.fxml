@@ -1,27 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
+<BorderPane prefHeight="625.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.CuradorController">
+    <top>
+        <VBox alignment="CENTER" styleClass="header-container" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="DORINHO'S" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="22.0" />
+                    </font>
+                </Label>
+                <Label text="Curadoria &amp; Gestão de Acervo" textFill="#cccccc">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </Label>
+            </children>
+            <padding>
+                <Insets bottom="15.0" top="15.0" />
+            </padding>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="15.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <children>
+                <GridPane hgap="12.0" vgap="10.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="160.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="420.0" minWidth="10.0" prefWidth="388.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label text="Nome do Curador:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <TextField fx:id="txt_nome" promptText="Nome do responsável" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-<AnchorPane prefHeight="600.0" prefWidth="625.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.CuradorController">
-   <children>
-      <Button layoutX="422.0" layoutY="94.0" mnemonicParsing="false" onAction="#cataloga" text="Catalogar Obra" />
-      <Button layoutX="425.0" layoutY="151.0" mnemonicParsing="false" onAction="#aprova" text="Aprovar Obra" />
-      <Button layoutX="440.0" layoutY="214.0" mnemonicParsing="false" onAction="#guiar" text="Guiar" />
-      <Label fx:id="lbl_result" layoutX="456.0" layoutY="378.0" text="....." />
-      <TextField fx:id="txt_nome" layoutX="55.0" layoutY="81.0" />
-      <TextField fx:id="txt_especialidade" layoutX="55.0" layoutY="151.0" />
-      <TextField fx:id="txt_anos" layoutX="55.0" layoutY="226.0" />
-      <TextField fx:id="txt_obra" layoutX="55.0" layoutY="339.0" />
-      <TextField fx:id="txt_qtd" layoutX="55.0" layoutY="439.0" />
-      <Label layoutX="55.0" layoutY="292.0" text="nome da obra" />
-      <Label layoutX="55.0" layoutY="42.0" text="Nome do curador" />
-      <Label layoutX="55.0" layoutY="118.0" text="Especialidade" />
-      <Label layoutX="55.0" layoutY="196.0" text="Anos de Experiencia" />
-      <Label layoutX="55.0" layoutY="403.0" text="Quantidade de Pessoas no Museu" />
-      <Button layoutX="299.0" layoutY="495.0" mnemonicParsing="false" onAction="#Voltar" text="Voltar" />
-   </children>
-</AnchorPane>
+                        <Label text="Especialidade:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <TextField fx:id="txt_especialidade" promptText="Ex: Trajes de Gala, Tecidos" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                        <Label text="Anos de Experiência:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <TextField fx:id="txt_anos" promptText="Anos de atuação" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                        <Label text="Nome da Obra:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <TextField fx:id="txt_obra" promptText="Nome da peça ou coleção" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                        <Label text="Qtd. Pessoas no Museu:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <TextField fx:id="txt_qtd" promptText="Visitantes / Público" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                    </children>
+                </GridPane>
+
+                <HBox alignment="CENTER" spacing="12.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#cataloga" prefWidth="130.0" styleClass="btn-primary" text="Catalogar Obra" />
+                        <Button mnemonicParsing="false" onAction="#aprova" prefWidth="130.0" styleClass="btn-secondary" text="Aprovar Obra" />
+                        <Button mnemonicParsing="false" onAction="#guiar" prefWidth="130.0" styleClass="btn-secondary" text="Guiar" />
+                    </children>
+                </HBox>
+
+                <VBox alignment="CENTER" prefHeight="90.0" style="-fx-background-color: #ffffff; -fx-border-color: #d1d5db; -fx-border-radius: 4px; -fx-padding: 10px;">
+                    <children>
+                        <Label text="Relatório / Status:" style="-fx-font-size: 11px; -fx-text-fill: #6b7280;" />
+                        <Label fx:id="lbl_result" text="....." textAlignment="CENTER" wrapText="true">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" style="-fx-padding: 0 20 20 20;">
+            <children>
+                <Button mnemonicParsing="false" onAction="#Voltar" prefWidth="100.0" styleClass="btn-neutral" text="Voltar" />
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
